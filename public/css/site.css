@@ -1,0 +1,47 @@
+    label{
+      margin-top:10px;
+      margin-bottom:10px;
+    }
+    .navbar-inverse{
+      background-color:#0b1751;
+      border-color:#080808;
+    }
+    .button_form{
+      margin-top:10px;
+      margin-bottom:10px;
+      background-color:#4CAF50;
+    }
+    .select_form{
+       margin-top:10px;
+       margin-bottom:10px;
+    }
+      .row{
+        display: -webkit-box;/* Safari*/
+        display: -webkit-flex; /* Safari 6.1+*/
+        display: -ms-flexbox;
+        display:  flex;
+        flex-wrap:  wrap;
+      }
+      .row > [class*='col-'] /* Si applica a tutte le colonne il cui "padre" è un div di classe row*/ {
+        display: flex;
+        flex-direction: column;
+      }
+      .center_div{
+        margin:0 auto;
+        width:80%;
+      }
+      table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+      }
+
+      td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+      }
+
+      tr:nth-child(even) {
+          background-color: #dddddd;
+      }
