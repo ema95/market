@@ -6,6 +6,15 @@
       background-color:#0b1751;
       border-color:#080808;
     }
+    .datatable_button{
+      margin-top:10px;
+      margin-bottom:10px;
+      margin-left:10px;
+      height:30px;
+      width:150px;
+      padding:0px;
+      text-align:center;
+    }
     .button_form{
       margin-top:10px;
       margin-bottom:10px;
@@ -44,4 +53,9 @@
 
       tr:nth-child(even) {
           background-color: #dddddd;
+      }
+
+      input[readonly]{
+        border:none;
+        background:none;
       }

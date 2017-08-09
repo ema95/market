@@ -14,13 +14,13 @@ class CreatePostazionesTable extends Migration
     public function up()
     {
         Schema::create('postazione', function (Blueprint $table) {
-
-            $table->integer('IDTipologia')->unsigned();
-            $table->integer('riga');
-            $table->integer('colonna');
+            $table->increments('IDPostazione');
+            $table->integer('IDTipologia')->unsigned()->nullable();
+            $table->decimal('latitudine',17,15);
+            $table->decimal('longitudine',17,15);
             $table->integer('IDArea')->unsigned();
 
-            $table->primary(['riga','colonna','IDArea']);
+            $table->unique(['latitudine','longitudine','IDArea']);
 
             $table->foreign('IDArea')->references('IDArea')->on('area')->onDelete('cascade');
             $table->foreign('IDTipologia')->references('IDTipologia')->on('tipologia')->onDelete('cascade');

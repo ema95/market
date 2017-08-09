@@ -26,8 +26,6 @@ Route::group(['middleware'=>'auth'], function(){
 
 	Route::get('inserisci-mercato', 'MarketController@insert');
 	Route::post('mercato','MarketController@store');
-	Route::post('mercato/getArea','MarketController@getArea');
-
 
 	Route::get('inserisci-operatore', 'OperatorController@insert');
 	Route::post('operatore','OperatorController@store');
@@ -45,6 +43,18 @@ Route::group(['middleware'=>'auth'], function(){
 	Route::get('inserisci-autorizzazione','AuthorizationController@insert');
 	Route::post('autorizzazione','AuthorizationController@store');
 
-
 });
+	Route::get('getAreaCoordinates','AreaController@getCoordinates');
+	Route::get('getPlacesByMarketId','MarketController@getPlacesByMarketId');
+
+	Route::get('gestisci-postazioni','PlaceController@handle')->name('handlePlace');
+	Route::get('gestisci-mercato','MarketController@handle')->name('handleMarket');
+	
+	Route::get('place/selectByIdArea','PlaceController@selectByIdArea');
+
+	Route::post('place/updateType','PlaceController@updateType');
+
+	Route::get('place/selectAllByIdArea','PlaceController@selectAllByIdArea');
+
+	Route::get('type/getAll','TypeController@getAll');
 

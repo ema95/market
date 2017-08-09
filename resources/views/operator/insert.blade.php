@@ -1,4 +1,4 @@
-@include('includes.nav')
+@extends('includes.layout')
 
 @section('content')
 
@@ -6,9 +6,9 @@
     <h2>Inserisci un nuovo operatore</h2>
     
     <div class="col-xs-12">
-     <form method="post" id="register-operator" action="operatore">    
+       <form method="post" id="register-operator" action="operatore">    
         <div class="form-group">
-        {{csrf_field()}}
+            {{csrf_field()}}
             <label for="nome">Nome:</label>
             <input type="text" name="nome" class="form-control" placeholder="nome">
 
@@ -33,11 +33,10 @@
         </div>
     </form>
 
-<script>
-//var CSRF_TOKEN= $('meta[name="csrf-token"]').attr('content');
+    <script>
 $(document).ready(function(){
     $("#register-operator").on("click","button", function(){       
-        $.ajax({
+        $.ajax({    
             url:"operatore",
             type:"POST",
             data: $("#register-operator").serialize(),
@@ -48,20 +47,20 @@ $(document).ready(function(){
                     $("#message").html(data['message']);
                     $('#message').css('color', 'green');
                     $("#message").fadeIn("fast",function(){
-                    $(this).delay(2000).fadeOut("slow");
+                        $(this).delay(2000).fadeOut("slow");
                     });
                     document.getElementById("register-operator").reset();
                 }else{
                     $("#message").html(data['message']);
                     $('#message').css('color', 'red');
                     $("#message").fadeIn("fast",function(){
-                    $(this).delay(4000).fadeOut("slow");
+                        $(this).delay(4000).fadeOut("slow");
                     });
                 }
 
-                }
-             }); 
-        });
+            }
+        }); 
     });
+});
 </script>
 @endsection

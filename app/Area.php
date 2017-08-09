@@ -11,12 +11,37 @@ class Area extends Model
     protected $primaryKey="IDArea";
     public $timestamps=false;
     
-    public function __construct($righe,$colonne,$luogo){
-    	$this->righe = $righe;
-    	$this->colonne = $colonne;
-    	$this->luogo = $luogo;
-    }
     public function markets(){
     	return $this->hasMany('App\Mercato');
+    }
+
+    public function newArea($request){
+
+            $this->luogo=$request->input('luogo');
+            $this->latitudine=$request->input('lat');
+            $this->longitudine=$request->input('lon');
+        	try{  
+
+        		$area->save();
+                            return response()->json([
+                                'response'=>'success',
+                                'message'=>'area inserita correttamente'
+                            ]); 
+        	}catch(\Exception $e){
+
+        		  return response()->json([
+                                'response'=>'success',
+                                'message'=>'Something went wrong...'
+                            ]); 
+        	}
+    }
+
+    public static function getCoordinates($request){
+
+            return Area::select('latitudine','longitudine')
+            ->where('IDArea','=',$request->input('IDArea'))
+            ->get()
+            ->toJson();
+
     }
 }

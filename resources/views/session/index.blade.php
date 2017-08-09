@@ -20,7 +20,7 @@
 		      
 		      <a class="pull-right" href="home">homepage</a>
 
-		@include('includes.errors')
+		@include('includes.errors')	
 
 	   </div> 
 

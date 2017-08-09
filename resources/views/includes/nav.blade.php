@@ -31,11 +31,12 @@
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Gestione
                 <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="inserisci-mercato">Mercato</a></li>
-                    <li><a href="inserisci-area">Area</a></li>
-                    <li><a href="inserisci-operatore">Assegnazioni</a></li>
-                    <li><a href="inserisci-postazione">Presenze</a></li>
-                    <li><a href="inserisci-autorizzazione">Autorizzazioni</a></li>
+                    <li><a class="nav-link" href="gestisci-mercato">Mercato</a></li>
+                    <li><a href="gestisci-area">Area</a></li>
+                    <li><a href="gestisci-operatore">Assegnazioni</a></li>
+                    <li><a href="gestisci-postazione">Presenze</a></li>
+                    <li><a href="gestisci-autorizzazione">Autorizzazioni</a></li>
+                    <li><a href="gestisci-postazioni">Postazioni</a></li>
                   </ul>
            
               </li>

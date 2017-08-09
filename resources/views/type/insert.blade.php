@@ -1,7 +1,5 @@
 @extends ('includes.layout')
 
-@include('includes.nav')
-
 @section('content')
 <div class="row center_div">
 	<div class="col-xs-12">
@@ -15,6 +13,11 @@
 	        	<input type="submit" class="form-control button_form " value="Registra nuova tipologia">
 	        </div>
 	    </form>
+	    	@include('includes.errors')
+		@include('includes.success')
 	</div>
+
 </div>
+
+
 @endsection

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-	@include('includes.head')
+@include('includes.head')	
+
 <body>
 	@include('includes.nav')
 	@yield('content')

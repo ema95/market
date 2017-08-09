@@ -12,14 +12,15 @@ class TypeController extends Controller
     	return view('type.insert');
     }
 
-    public function store(){
+    public function store(Request $request){
+        
     	$tipologia = new Tipologia;
-    	$tipologia->tipo=request('tipologia');
-    	try{
-    		$tipologia->save();
-    		echo "inserito correttamente";
-    	}catch(\Exception $e){
-    		echo $e->getMessage();
-    	}
+             return $tipologia->newType($request);
+    }
+
+    public function getAll(){
+
+        return Tipologia::all()->toJson();
+
     }
 }

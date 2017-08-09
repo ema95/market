@@ -16,8 +16,9 @@ class CreateAreasTable extends Migration
         Schema::create('area', function (Blueprint $table) {
             $table->increments('IDArea');
             $table->string('luogo');
-            $table->integer('righe');
-            $table->integer('colonne');
+            $table->decimal('latitudine',17,15);
+            $table->decimal('longitudine',17,15);
+            //$table->unique(['latitudine','longitudine'); //Shouldn't be existing two place with same coordinates?
         });
     }
 

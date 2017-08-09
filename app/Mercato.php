@@ -15,5 +15,17 @@ class Mercato extends Model
     	return $this->belongsTo('App\Area');
     }
 
-    
+    public function newMarket($request){
+
+            $this->dataCreazione=$request->input('data');
+            $this->IDArea=$request->input('IDArea');
+            try{
+                $this->save();
+                return redirect()->back()->with('message','mercato inserito correttamente');
+            }catch(\Exception $e){
+
+                if($e->getCode()==23000)
+                return redirect()->back()->withErrors(['area già occupata nella data scelta']);
+            }
+    }
 }

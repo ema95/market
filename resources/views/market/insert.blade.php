@@ -34,6 +34,8 @@
                   </div>
 
               </form>
+              @include('includes.success')
+              @include('includes.errors')
           </div>
   </div>
 
